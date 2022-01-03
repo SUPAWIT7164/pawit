@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <link rel="stylesheet" href="stylewit.css">
+  <title>Document</title>
+</head>
+<body>
+  
+    <center class="prawit" id="prawit1">
+      <img id="wit" src="img/prawit.jpg" alt="">
+      <h1>{{score}}</h1>
+      <button v-if="button==0" @click="wit01()">pop</button>
+      <button v-if="button==1" @click="wit02()">pop</button>
+    </center>
+    <audio id="audio" src="audio/Buffalo Sound.mp3"></audio>
+</body>
+</html>
+<script>
+    const wit01 ="img/prawit.jpg";
+    const wit02 ="img/here.jpg";
+  
+  
+  var app = new Vue({
+    el: "#prawit1",
+    data:{
+      button:0, 
+      score: 0
+    },
+    methods: {
+      wit01 : function () {
+        wit.src=wit01
+        this.button++
+        this.score++
+        var audio = document.getElementById("audio");
+        audio.play();
+      },
+      wit02 : function () {
+        wit.src=wit02
+        this.button=0
+        this.score++
+      }
+    }
+    
+  })
+</script>
